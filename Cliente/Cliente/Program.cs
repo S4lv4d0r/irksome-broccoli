@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Net;
 using System.Net.Sockets;
+using System.IO;
 
 namespace Cliente
 {
@@ -19,12 +20,28 @@ namespace Cliente
             //declaracion de destino=servidor
             IPEndPoint destino = new IPEndPoint(IPAddress.Parse("192.168.1.223"), 5555);
             //declaracion de socket cliente
-            Socket cliente = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+            //Socket cliente = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+            TcpClient cliente = new TcpClient();
             try
             {
+                //declaramel buffer de escritura
+                byte[] bufferEscritura = null;
                 //conectamos: cliente--destino
                 cliente.Connect(destino);
                 Console.WriteLine("Conectado con exito");
+                //enviamos mensage
+                Stream str = cliente.GetStream();
+                if(str.CanWrite)
+                {
+                    bufferEscritura = Encoding.ASCII.GetBytes("Texto a enviar");
+                    if(str!=null)
+                    {
+                        //enviamos el sms
+                        str.Write(bufferEscritura,0,bufferEscritura.Length);
+                    }
+                }
+                cliente.Close();
+                cliente = null;
             }
             catch (Exception error)
             {
