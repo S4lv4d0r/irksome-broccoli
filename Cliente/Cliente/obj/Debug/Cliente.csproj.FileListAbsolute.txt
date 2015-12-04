@@ -1,0 +1,7 @@
+C:\Users\Equipo\AppData\Local\Temporary Projects\Cliente\bin\Debug\Cliente.exe.config
+C:\Users\Equipo\Desktop\ProyectoPSP\Cliente\Cliente\bin\Debug\Cliente.exe.config
+C:\Users\Equipo\Desktop\ProyectoPSP\Cliente\Cliente\bin\Debug\Cliente.exe
+C:\Users\Equipo\Desktop\ProyectoPSP\Cliente\Cliente\bin\Debug\Cliente.pdb
+C:\Users\Equipo\Desktop\ProyectoPSP\Cliente\Cliente\obj\Debug\Cliente.csprojResolveAssemblyReference.cache
+C:\Users\Equipo\Desktop\ProyectoPSP\Cliente\Cliente\obj\Debug\Cliente.exe
+C:\Users\Equipo\Desktop\ProyectoPSP\Cliente\Cliente\obj\Debug\Cliente.pdb
