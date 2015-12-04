@@ -28,12 +28,17 @@ namespace Cliente
                 byte[] bufferEscritura = null;
                 //conectamos: cliente--destino
                 cliente.Connect(destino);
-                Console.WriteLine("Conectado con exito");
+                Console.WriteLine("conectado con exito");
                 //enviamos mensage
                 //Stream str = cliente.GetStream();
                 String texto = Console.ReadLine();
-                bufferEscritura = Encoding.Default.GetBytes(texto);
-                cliente.Send(bufferEscritura,0,bufferEscritura.Length,0);
+                //mientras escribamos algo, se enviara
+                while(texto!=String.Empty)
+                {
+                    bufferEscritura = Encoding.ASCII.GetBytes(texto);
+                    cliente.Send(bufferEscritura,0,bufferEscritura.Length,0);
+                    texto = Console.ReadLine();
+                }                
                 //if(str.CanWrite)
                 //{
                 //    bufferEscritura = Encoding.ASCII.GetBytes();

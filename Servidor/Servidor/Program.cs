@@ -21,6 +21,8 @@ namespace Servidor
             //definimos el socket
             Socket servidor = new Socket(AddressFamily.InterNetwork, SocketType.Stream,ProtocolType.Tcp);
             byte[] bufferEscritura = null;
+            String text;
+            int a;
             try
             {
                 //asocioamos el socket a la direccion de destino
@@ -29,12 +31,16 @@ namespace Servidor
                 servidor.Listen(1);
                 Console.WriteLine("Escuchando...");
                 Socket escuchar = servidor.Accept();
-                Console.WriteLine("Conexion con exito");
-                bufferEscritura = new byte[255];
-                int a = escuchar.Receive(bufferEscritura, 0, bufferEscritura.Length, 0);
-                Array.Resize(ref bufferEscritura, a);
-                Console.WriteLine("El cliente dice: "+Encoding.Default.GetString(bufferEscritura));
-                servidor.Close();
+                Console.WriteLine("Conexion con exito");                
+                do
+                {
+                    bufferEscritura = new byte[255];a = escuchar.Receive(bufferEscritura, 0, bufferEscritura.Length, 0);
+                    Array.Resize(ref bufferEscritura, a);
+                    text = Encoding.Default.GetString(bufferEscritura);
+                    Console.WriteLine("El cliente dice: " + text);
+                } while (text != String.Empty);
+               
+                //servidor.Close();
                 /*
                  *creamos un nuevo socket en cuanto recibe peticion de conexion, asi 
                  *nuestro servidor queda disponible para seguir escuchando a otros 
