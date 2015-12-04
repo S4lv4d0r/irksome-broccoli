@@ -1,2 +1,6 @@
 C:\Users\Equipo\AppData\Local\Temporary Projects\Servidor\bin\Debug\Servidor.exe.config
 C:\Users\Equipo\Desktop\ProyectoPSP\Servidor\Servidor\bin\Debug\Servidor.exe.config
+C:\Users\Equipo\Desktop\ProyectoPSP\Servidor\Servidor\bin\Debug\Servidor.exe
+C:\Users\Equipo\Desktop\ProyectoPSP\Servidor\Servidor\bin\Debug\Servidor.pdb
+C:\Users\Equipo\Desktop\ProyectoPSP\Servidor\Servidor\obj\Debug\Servidor.exe
+C:\Users\Equipo\Desktop\ProyectoPSP\Servidor\Servidor\obj\Debug\Servidor.pdb
